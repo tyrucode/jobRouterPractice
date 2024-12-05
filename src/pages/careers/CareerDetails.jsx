@@ -28,6 +28,10 @@ export const careerDetailsLoader = async ({ params }) => {
     const { id } = params
     //call our api and get the careers ID 
     const res = await fetch('http://localhost:4000/careers/' + id)
+    //in react res.ok is a built in property that if true means we have data if false means we dont have data
+    if (res.ok !== true) {
+        throw Error('could not find that career')
+    }
     return res.json()
 }
 

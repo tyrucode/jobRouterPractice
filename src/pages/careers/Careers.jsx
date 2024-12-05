@@ -28,6 +28,11 @@ export const careersLoader = async () => {
     //for simplicity sake we fetch from our data folder but normally we would use axios and fetch from a api
     //using fake json server so we can pretend we are fetching our data and that its not in a different folder
     const res = await fetch('http://localhost:4000/careers')
+
+    if (res.ok !== true) {
+        throw Error('could not fetch the careers')
+    }
+
     return res.json()
 }
 // THIS WILL LOOK DIFFERENT WITH AXIOS SO BEWARE OF THAT AND RESEARCH TO FIGURE IT OUT
