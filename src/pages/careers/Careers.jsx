@@ -13,7 +13,9 @@ const Careers = () => {
         have keys equal to the ids provided from the data (UUID IF NEEDED not here tho)
         then just list the respective careers title and locations */}
             {careers.map(career => (
-                <Link to='/' key={career.id}>
+                //we set the link to be /career/id and we turn it into a string since itll be a number
+                //since we are in career layout the ur is already /career so all we do is add the id part below
+                <Link to={career.id.toString()} key={career.id}>
                     <p>{career.title}</p>
                     <p>Based in: {career.location}</p>
                 </Link>
