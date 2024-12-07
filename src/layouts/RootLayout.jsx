@@ -1,5 +1,6 @@
 //importing navLink because its the only part we use in this file
 import { NavLink, Outlet } from "react-router-dom"
+import BreadCrumbs from "../components/BreadCrumbs"
 
 export default function RootLayout() {
     return(
@@ -13,6 +14,8 @@ export default function RootLayout() {
                     <NavLink to='help'>Help</NavLink>
                     <NavLink to='careers'>Careers</NavLink>
                 </nav>
+                {/* breadcrumbs normally underneath navbar */}
+                <BreadCrumbs />
             </header>
 
             <main>
