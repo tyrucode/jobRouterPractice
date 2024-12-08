@@ -4,7 +4,7 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Faq from "./pages/help/Faq";
-import Contact  from "./pages/help/Contact";
+import Contact, { contactAction }  from "./pages/help/Contact";
 import NotFound from "./pages/NotFound";
 import Careers from "./pages/careers/Careers";
 import CareerDetails from "./pages/careers/CareerDetails";
@@ -33,7 +33,8 @@ const router = createBrowserRouter(
           {/* Different Route since these are connected below */}
           <Route path="help" element={<HelpLayout />}> {/*These below are now children of the /help route meaning their url will be*/}
             <Route path="faq" element={<Faq />}/>  {/* /help/faq */}
-            <Route path="contact" element={<Contact />}/> {/* /help/contact */}
+            {/* we add the action function here same as we would a loader function elsewhere */}
+            <Route path="contact" element={<Contact />} action={contactAction}/> {/* /help/contact */}
           </Route>
 
           {/* new careers page , inside this page we have a route to the careers which will be inside of it */}
