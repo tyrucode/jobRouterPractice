@@ -37,13 +37,10 @@ export const contactAction = async ({ request }) => {
     email: data.get('email'),
     message: data.get('message')
   }
-
   //validation without using backend
   if(submission.message.length < 10 ) {
     return {error: 'message must be over 10 characters long'}
   }
-
-
   //redirect the user
   //since we arent doing anything with this data we use the redirect which is special from
   //react router and send the user back to the homepage
